@@ -171,6 +171,8 @@ namespace DZ_SkillBox_11.View
         {
             EditAddDeleteWindow.EditWorker(FindWorker(), FindDepartment());
             EditAddDeleteWindow.InWorkerId(FindWorkerId());
+            ChangeProperties change = new ChangeProperties();
+            change.Changed(CombWiw);
         }
 
         /// <summary>
@@ -195,6 +197,9 @@ namespace DZ_SkillBox_11.View
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();            
             editAdd.Show();
             editAdd.InputWorkerAdd();
+            ChangeProperties change = new ChangeProperties();
+            change.Changed(CombWiw);
+            
         }
 
         private void ListViewUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DZ_SkillBox_11;
+using DZ_SkillBox_11.Model;
 
 namespace DZ_SkillBox_11.View
 {
@@ -26,7 +28,7 @@ namespace DZ_SkillBox_11.View
 
         private void WhatChanged()
         {
-            
+            OutPutWhoChanged.Text = "da";
         }
 
     }
