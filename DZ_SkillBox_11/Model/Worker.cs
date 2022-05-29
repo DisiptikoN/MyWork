@@ -54,9 +54,7 @@ namespace DZ_SkillBox_11.Model
         public int WorkerId { get; set ; }
 
 
-        
-
-       
+   
 
         public int DepartmentId
         {
@@ -68,7 +66,6 @@ namespace DZ_SkillBox_11.Model
             set 
             { 
                 departmentId = value;
-
             }
             
         }
@@ -85,7 +82,6 @@ namespace DZ_SkillBox_11.Model
                 if (MainWindow.CombWiw == 1)
                 {
                     return "******";
-
                 }
                 return seriesPassport;
             }
@@ -105,13 +101,10 @@ namespace DZ_SkillBox_11.Model
 
                 if (MainWindow.CombWiw == 0)
                 {
-
-                    return numberPassport;
-                    
+                    return numberPassport;              
                 }
                 if (MainWindow.CombWiw == 1)
                 {
-
                     return "******";
                 }
                 return "*";
@@ -120,7 +113,6 @@ namespace DZ_SkillBox_11.Model
             set 
             {
                 numberPassport = value;
-
             }
         }
 
@@ -132,12 +124,10 @@ namespace DZ_SkillBox_11.Model
                 if (MainWindow.CombWiw == 0)
                 {
                     name = value;
-
                 }
                 if (MainWindow.CombWiw == 1)
                 {
                     name = value;
-
                 }    
             }
         }
@@ -148,7 +138,6 @@ namespace DZ_SkillBox_11.Model
             set 
             {
                 lastname = value;
-
             }
         }
 
@@ -158,7 +147,6 @@ namespace DZ_SkillBox_11.Model
             set 
             {
                 patronymic = value;
-
             }
         }
 
@@ -190,8 +178,6 @@ namespace DZ_SkillBox_11.Model
             this.NumberPassport = NumberPassport;
             this.WorkerId = WorkerId;
             this.dateTime = DateTime.Now;
-
-
         }
 
         public Worker(string Name, string Lastname, string Patronymic, string NumberPhone, string SeriesPassport, string NumberPassport)
