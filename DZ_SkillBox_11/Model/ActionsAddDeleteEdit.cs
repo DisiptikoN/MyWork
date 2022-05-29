@@ -58,8 +58,5 @@ namespace DZ_SkillBox_11.Model
                 }
             }
         }
-
-       
-
     }
 }

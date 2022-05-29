@@ -14,7 +14,11 @@ namespace DZ_SkillBox_11.View
 
         Repository data;
         public static int CombWiw;
+        /// <summary>
+        /// Проверка вывода данных в listView
+        /// </summary>
         public static int numbers = 1;
+        public static int numberAdd = 1;
 
 
         public MainWindow()
@@ -67,8 +71,7 @@ namespace DZ_SkillBox_11.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ComboBoxUsers.Items.Refresh();
-            ListViewUsers.Items.Refresh();
-            
+            ListViewUsers.Items.Refresh();     
         }
 
 
@@ -169,7 +172,6 @@ namespace DZ_SkillBox_11.View
             EditAddDeleteWindow edit = new EditAddDeleteWindow();
 
             EditAddDeleteWindow.EditWorker(FindWorker(), FindDepartment());
-            //edit.SearchWorker(FindWorkerId(),FindWorker(), FindDepartment());
             EditAddDeleteWindow.InWorkerId(FindWorkerId());
         }
 
@@ -191,8 +193,8 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            EditAddDeleteWindow editAdd = new EditAddDeleteWindow();
-            
+            numberAdd = 0;
+            EditAddDeleteWindow editAdd = new EditAddDeleteWindow();            
             editAdd.Show();
             editAdd.InputWorkerAdd();
         }

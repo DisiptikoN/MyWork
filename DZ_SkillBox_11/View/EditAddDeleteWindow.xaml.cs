@@ -1,6 +1,5 @@
 ﻿using DZ_SkillBox_11.Model;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using static DZ_SkillBox_11.View.MainWindow;
@@ -23,12 +22,12 @@ namespace DZ_SkillBox_11.View
         {
             InitializeComponent();
             AddEditCombobox.ItemsSource = Repository.departments;
-            AccessToTextBox();          
+            AccessToTextBox();
         }
 
         private void AddEditCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          
+
         }
 
         /// <summary>
@@ -42,7 +41,7 @@ namespace DZ_SkillBox_11.View
                                            InputPatronymic.Text,
                                            InputPssportNumber.Text,
                                            InputPassportSeries.Text,
-                                           InputPhoneNumber.Text, 
+                                           InputPhoneNumber.Text,
                                            AddEditCombobox.SelectedIndex,
                                            workers.Count + 1);
         }
@@ -63,19 +62,19 @@ namespace DZ_SkillBox_11.View
         /// <summary>
         /// Редактирование сотрудник
         /// </summary>
-       
-     
-        
-        
+
+
+
+
         private void InputWorkerEdd()
         {
-            ActionsAddDeleteEdit.EddWorker(InputName.Text,
-                                           InputLastName.Text, 
-                                           InputPatronymic.Text, 
-                                           InputPssportNumber.Text, 
-                                           InputPassportSeries.Text, 
-                                           InputPhoneNumber.Text, 
-                                           AddEditCombobox.SelectedIndex, 
+            ActionsAddDeleteEdit.AddWorker(InputName.Text,
+                                           InputLastName.Text,
+                                           InputPatronymic.Text,
+                                           InputPssportNumber.Text,
+                                           InputPassportSeries.Text,
+                                           InputPhoneNumber.Text,
+                                           AddEditCombobox.SelectedIndex,
                                            WID);
         }
 
@@ -85,7 +84,7 @@ namespace DZ_SkillBox_11.View
         /// <param name="name"></param>
         public static void DelWorker(Worker worker)
         {
-            Repository.workers.Remove(worker);           
+            Repository.workers.Remove(worker);
         }
 
         /// <summary>
@@ -93,7 +92,7 @@ namespace DZ_SkillBox_11.View
         /// </summary>
         /// <param name="worker"></param>
         /// <param name="department"></param>
-        public static void EditWorker(Worker worker,  int department)
+        public static void EditWorker(Worker worker, int department)
         {
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();
             editAdd.InputName.Text = worker.Name;
@@ -114,45 +113,55 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void BtrAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (InputName.Text == string.Empty || 
-                InputLastName.Text == string.Empty || 
-                InputPatronymic.Text == string.Empty || 
-                InputPhoneNumber.Text == string.Empty ||
-                InputPssportNumber.Text == string.Empty || 
-                InputPassportSeries.Text == string.Empty || 
-                AddEditCombobox.SelectedIndex == -1)
+            if (numberAdd == 1)
             {
-                MessageBox.Show("Не все поля заполнены");
+                if (InputName.Text == string.Empty ||
+                    InputLastName.Text == string.Empty ||
+                    InputPatronymic.Text == string.Empty ||
+                    InputPhoneNumber.Text == string.Empty ||
+                    InputPssportNumber.Text == string.Empty ||
+                    InputPassportSeries.Text == string.Empty ||
+                    AddEditCombobox.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Не все поля заполнены");
+                }
+
+                else if (InputName.Text != string.Empty ||
+                         InputLastName.Text != string.Empty ||
+                         InputPatronymic.Text != string.Empty ||
+                         InputPhoneNumber.Text != string.Empty ||
+                         InputPssportNumber.Text != string.Empty ||
+                         InputPassportSeries.Text != string.Empty)
+                {
+                    InputWorkerEdd();
+                    MessageBox.Show("Данные сотрудника изминены");
+                    Close();
+                }
             }
 
-            else if (InputName.Text != string.Empty || 
-                     InputLastName.Text != string.Empty || 
-                     InputPatronymic.Text != string.Empty || 
-                     InputPhoneNumber.Text != string.Empty ||
-                     InputPssportNumber.Text != string.Empty || 
-                     InputPassportSeries.Text != string.Empty)
+            else if (numberAdd == 0)
             {
-                InputWorkerEdd();
-                MessageBox.Show("Данные сотрудника изминены");
-                Close();
+                if (InputName.Text != string.Empty ||
+                    InputLastName.Text != string.Empty ||
+                    InputPatronymic.Text != string.Empty ||
+                    InputPhoneNumber.Text != string.Empty ||
+                    InputPssportNumber.Text != string.Empty ||
+                    InputPassportSeries.Text != string.Empty)
+                {
+                    InputWorkerAdd();
+                    MessageBox.Show("Сотрудник добавлен");
+                    Close();
+                }
             }
 
-            else if(InputName.Text != string.Empty ||
-                     InputLastName.Text != string.Empty ||
-                     InputPatronymic.Text != string.Empty ||
-                     InputPhoneNumber.Text != string.Empty ||
-                     InputPssportNumber.Text != string.Empty ||
-                     InputPassportSeries.Text != string.Empty)
-            {
-                InputWorkerAdd();
-                MessageBox.Show("Сотрудник добавлен");
-                Close();
-            }    
+
+
+
         }
 
 
 
- 
+
 
 
 
