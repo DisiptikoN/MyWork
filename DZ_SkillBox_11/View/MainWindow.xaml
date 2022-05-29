@@ -1,0 +1,53 @@
+﻿<Window x:Class="DZ_SkillBox_11.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZ_SkillBox_11.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1150">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0">
+            <TabItem Name="UserTab">
+                <TabItem.Header>
+                    <TextBlock Text="Меню"/>
+                </TabItem.Header>
+                <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Добавить" Click="AddClick"/>
+                        <MenuItem Header="Редактировать" Click="EditClick"/>
+                        <MenuItem Header="Удаление" Click="DeleteClick"/>
+                        <MenuItem Header="Свойства" Click="PropirtiesClick" />
+                    </ContextMenu>
+                </TabItem.ContextMenu>
+
+                <ListView x:Name="ListViewUsers" Margin="265,10,10,65" MouseDoubleClick="ListViewUsers_MouseDoubleClick">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" Width="100"  DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="LastName" Width="100" DisplayMemberBinding="{Binding Lastname}"/>
+                            <GridViewColumn Header="Patronymic" Width="100" DisplayMemberBinding="{Binding Patronymic}"/>
+                            <GridViewColumn Header="PhoneNumber" Width="150" DisplayMemberBinding="{Binding PhoneNumber}"/>
+                            <GridViewColumn Header="SeriesPassport"  Width="100" DisplayMemberBinding="{Binding SeriesPassport}" />
+                            <GridViewColumn Header="NumberPassport" Width="100" DisplayMemberBinding="{Binding NumberPassport}"/>
+                            <GridViewColumn Header="ChangeTime" Width="150" DisplayMemberBinding="{Binding dateTime}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+
+
+        </TabControl>
+        <Button Content="Update" HorizontalAlignment="Left" Height="44" Margin="635,366,0,0" VerticalAlignment="Top" Width="156" Click="Button_Click"/>
+        <TextBlock TextWrapping="Wrap" Text="Поиск" Margin="10,110,747,297"/>
+        <TextBox x:Name="TextBoxEdit" Text="Поиск" HorizontalAlignment="Left" Height="24" Margin="10,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243"/>
+        <ComboBox x:Name="ComboBoxUsers" HorizontalAlignment="Left" Height="24" Margin="10,36,0,0" VerticalAlignment="Top" Width="243" SelectionChanged="ComboBoxUsers_SelectionChanged"/>
+        <ComboBox x:Name="ComboBoxWiw"  HorizontalAlignment="Left" Height="28" Margin="10,374,0,0" VerticalAlignment="Top" Width="169" SelectionChanged="ComboBoxWiw_SelectionChanged"/>
+
+    </Grid>
+</Window>

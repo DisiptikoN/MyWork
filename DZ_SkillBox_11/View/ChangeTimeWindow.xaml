@@ -1,0 +1,29 @@
+﻿<Window x:Class="DZ_SkillBox_11.View.ChangeTimeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZ_SkillBox_11.View"
+        mc:Ignorable="d"
+        Title="Свойство" Height="450" Width="450">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0" Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="200">
+            <TextBlock Text="What changed"/>
+            <TextBox Name="OutPutChanged"/>
+            <TextBlock Text="Type changed"/>
+            <TextBox Text="" Name="OutPutTypeChanged"/>
+            <TextBlock Text="Who changed"/>
+            <TextBox Text="" Name="OutPutWhoChanged"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>
