@@ -51,9 +51,5 @@ namespace DZ_SkillBox_11.Model
         {
             Repository.workers.Add(new Worker(name, lastName, patronymic, numberPhone, seriesPassport, numberPassport, DpId, WorkerId));
         }
-
-           
-
-        
     }
 }
