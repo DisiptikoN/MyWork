@@ -18,8 +18,7 @@ namespace DZ_SkillBox_11.Model
         public Supervisor(string Name, int Id)
         {
             this.Name = Name;
-            this.Id = Id;
-            
+            this.Id = Id;           
         }
 
 
