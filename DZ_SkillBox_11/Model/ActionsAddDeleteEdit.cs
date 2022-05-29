@@ -53,7 +53,10 @@ namespace DZ_SkillBox_11.Model
         }
 
            
+        public static void TestCommit()
+        {
 
+        }
         
     }
 }
