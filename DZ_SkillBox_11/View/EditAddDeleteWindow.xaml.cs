@@ -68,7 +68,7 @@ namespace DZ_SkillBox_11.View
 
         private void InputWorkerEdd()
         {
-            ActionsAddDeleteEdit.AddWorker(InputName.Text,
+            ActionsAddDeleteEdit.EddWorker(InputName.Text,
                                            InputLastName.Text,
                                            InputPatronymic.Text,
                                            InputPssportNumber.Text,

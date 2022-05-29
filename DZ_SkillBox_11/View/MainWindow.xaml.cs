@@ -169,8 +169,6 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void EditClick(object sender, RoutedEventArgs e)
         {
-            EditAddDeleteWindow edit = new EditAddDeleteWindow();
-
             EditAddDeleteWindow.EditWorker(FindWorker(), FindDepartment());
             EditAddDeleteWindow.InWorkerId(FindWorkerId());
         }

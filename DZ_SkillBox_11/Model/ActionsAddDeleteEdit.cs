@@ -1,6 +1,7 @@
 ﻿using DZ_SkillBox_11.View;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace DZ_SkillBox_11.Model
 {
@@ -55,6 +56,7 @@ namespace DZ_SkillBox_11.Model
                     item.SeriesPassport = seriesPassport;
                     item.PhoneNumber = numberPhone;
                     item.DepartmentId = DpId;
+                    item.dateTime = DateTime.Now;
                 }
             }
         }
