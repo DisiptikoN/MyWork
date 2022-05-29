@@ -17,7 +17,7 @@ namespace DZ_SkillBox_11.View
 
         public ActionsAddDeleteEdit actions = new ActionsAddDeleteEdit();
         public static List<Worker> workers = new List<Worker>();
-        
+
 
         public EditAddDeleteWindow()
         {
@@ -63,6 +63,10 @@ namespace DZ_SkillBox_11.View
         /// <summary>
         /// Редактирование сотрудник
         /// </summary>
+       
+     
+        
+        
         private void InputWorkerEdd()
         {
             ActionsAddDeleteEdit.EddWorker(InputName.Text,
@@ -148,24 +152,7 @@ namespace DZ_SkillBox_11.View
 
 
 
-        public void SearchWorker(int Id, Worker worker, int department)
-        {
-            foreach (var item in Repository.workers)
-            {
-                if (item.WorkerId == Id)
-                {
-                    item.Name = InputName.Text;
-                    item.Lastname = InputLastName.Text;
-                    item.Patronymic = InputPatronymic.Text;
-                    item.NumberPassport = InputPssportNumber.Text;
-                    item.SeriesPassport = InputPassportSeries.Text;
-                    item.PhoneNumber = InputPhoneNumber.Text;
-                    AddEditCombobox.SelectedIndex = department;
-                    item.WorkerId = Id;
-                    break;
-                }
-            }
-        }
+ 
 
 
 

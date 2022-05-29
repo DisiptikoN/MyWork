@@ -7,11 +7,6 @@ namespace DZ_SkillBox_11.Model
 
     public class ActionsAddDeleteEdit : MainWindow
     {
-        
-
-        public static MainWindow mainWindow;
-        public static Worker workers;
-        public static List<Worker> worker;
 
         /// <summary>
         /// Добавление сотрудника 
@@ -49,7 +44,22 @@ namespace DZ_SkillBox_11.Model
         /// <param name="WorkerId"></param>
         public static void EddWorker(string name, string lastName, string patronymic, string numberPassport, string seriesPassport, string numberPhone, int DpId, int WorkerId)
         {
-            Repository.workers.Add(new Worker(name, lastName, patronymic, numberPhone, seriesPassport, numberPassport, DpId, WorkerId));
+            foreach (var item in Repository.workers)
+            {
+                if (WorkerId == item.WorkerId)
+                {
+                    item.Name = name;
+                    item.Lastname = lastName;
+                    item.Patronymic = patronymic;
+                    item.NumberPassport = numberPassport;
+                    item.SeriesPassport = seriesPassport;
+                    item.PhoneNumber = numberPhone;
+                    item.DepartmentId = DpId;
+                }
+            }
         }
+
+       
+
     }
 }

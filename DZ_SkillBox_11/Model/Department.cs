@@ -22,9 +22,9 @@ namespace DZ_SkillBox_11.Model
 
         }
 
-        //public override string ToString()
-        //{
-        //    return $"{DepartmentName,15} {DepartmentId,3}";        
-        //}
+        public override string ToString()
+        {
+            return $"{DepartmentName,15} {DepartmentId,3}";
+        }
     }
 }

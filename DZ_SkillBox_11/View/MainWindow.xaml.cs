@@ -14,16 +14,28 @@ namespace DZ_SkillBox_11.View
 
         Repository data;
         public static int CombWiw;
+        public static int numbers = 1;
 
 
         public MainWindow()
         {
             InitializeComponent();
+            if (numbers == 1)
+            {
+                Data();
+                numbers = 0;
+            }
+           
+                   
+        }
+
+        private void Data()
+        {
             data = Repository.CreateRepository();
             ComboBoxUsers.ItemsSource = Repository.departments;
             var data1 = Repository.RepositorySupervisor();
             ComboBoxWiw.ItemsSource = data1;
-            ComboBoxUsers.IsEnabled = false;         
+            ComboBoxUsers.IsEnabled = false;
         }
 
         /// <summary>
@@ -157,7 +169,8 @@ namespace DZ_SkillBox_11.View
             EditAddDeleteWindow edit = new EditAddDeleteWindow();
 
             EditAddDeleteWindow.EditWorker(FindWorker(), FindDepartment());
-            edit.SearchWorker(FindWorkerId(),FindWorker(), FindDepartment());
+            //edit.SearchWorker(FindWorkerId(),FindWorker(), FindDepartment());
+            EditAddDeleteWindow.InWorkerId(FindWorkerId());
         }
 
         /// <summary>

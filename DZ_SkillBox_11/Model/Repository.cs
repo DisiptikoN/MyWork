@@ -12,9 +12,9 @@ namespace DZ_SkillBox_11.Model
 
 
 
-        public static ObservableCollection<Worker> workers = new ObservableCollection<Worker>();
-        public static ObservableCollection<Department> departments = new ObservableCollection<Department>();
-        public static ObservableCollection<Supervisor> supervisors = new ObservableCollection<Supervisor>();
+        public static List<Worker> workers = new List<Worker>();
+        public static List<Department> departments = new List<Department>();
+        public static List<Supervisor> supervisors = new List<Supervisor>();
 
         private Repository() { }
 
@@ -27,8 +27,8 @@ namespace DZ_SkillBox_11.Model
         {
 
 
-            workers = new ObservableCollection<Worker>();
-            departments = new ObservableCollection<Department>();
+            workers = new List<Worker>();
+            departments = new List<Department>();
 
             if (workers != null)
             {
@@ -72,7 +72,7 @@ namespace DZ_SkillBox_11.Model
 
         }
 
-        public static Repository CreateRepository(int CountWorker = 10, int CountDepartments = 10)
+        public static Repository CreateRepository(int CountWorker = 50, int CountDepartments = 10)
         {
             return new Repository(CountWorker, CountDepartments);
         }   
