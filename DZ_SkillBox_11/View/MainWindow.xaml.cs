@@ -171,8 +171,8 @@ namespace DZ_SkillBox_11.View
         {
             EditAddDeleteWindow.EditWorker(FindWorker(), FindDepartment());
             EditAddDeleteWindow.InWorkerId(FindWorkerId());
-            ChangeProperties change = new ChangeProperties();
-            change.Changed(CombWiw);
+            ChangeTimeWindow changeTime = new ChangeTimeWindow();
+            changeTime.WhatChanged(CombWiw);
         }
 
         /// <summary>
@@ -193,12 +193,14 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void AddClick(object sender, RoutedEventArgs e)
         {
+            
             numberAdd = 0;
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();            
             editAdd.Show();
             editAdd.InputWorkerAdd();
-            ChangeProperties change = new ChangeProperties();
-            change.Changed(CombWiw);
+            
+            ChangeTimeWindow changeTime = new ChangeTimeWindow();
+            changeTime.WhatChanged(CombWiw);
             
         }
 

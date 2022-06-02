@@ -159,7 +159,7 @@ namespace DZ_SkillBox_11.Model
             }
         }
 
-
+        public string WhoChanged { get;set; }
        
 
         public Worker()
@@ -178,19 +178,24 @@ namespace DZ_SkillBox_11.Model
             this.NumberPassport = NumberPassport;
             this.WorkerId = WorkerId;
             this.dateTime = DateTime.Now;
+            
         }
 
-        public Worker(string Name, string Lastname, string Patronymic, string NumberPhone, string SeriesPassport, string NumberPassport)
-        {
+        //public Worker(string Name, string Lastname, string Patronymic, string NumberPhone, string SeriesPassport, string NumberPassport, int DpId,int WorkerId)
+        //{
+
+        //    this.Name = Name;
+        //    this.Lastname = Lastname;
+        //    this.Patronymic = Patronymic;
+        //    this.PhoneNumber = NumberPhone;
+        //    this.SeriesPassport = SeriesPassport;
+        //    this.NumberPassport = NumberPassport;
+        //    this.WorkerId = DpId;
+        //    this.WorkerId = WorkerId;
+        //    this.dateTime = DateTime.Now;
             
-            this.Name = Name;
-            this.Lastname = Lastname;
-            this.Patronymic = Patronymic;
-            this.PhoneNumber = NumberPhone;
-            this.SeriesPassport = SeriesPassport;
-            this.NumberPassport = NumberPassport;
-            
-        }
+
+        //}
 
        
 

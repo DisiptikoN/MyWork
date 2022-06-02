@@ -9,28 +9,12 @@ using DZ_SkillBox_11.View;
 
 namespace DZ_SkillBox_11.Model
 {
-    internal class ChangeProperties
+    internal struct ChangeProperties
     {
-        public List<Supervisor> Changed(int Supervisor)
-        {
+          
+      
 
-            var name = Repository.RepositorySupervisor();
 
-            if (Supervisor == 0)
-            {
-                 name = Repository.RepositorySupervisor();
-            }
-            else if (Supervisor == 1)
-            {
-                 name = Repository.RepositorySupervisor();
-            }
 
-           return name;
-        }
-
-        public void ChangedOut()
-        {
-
-        }
     }
 }

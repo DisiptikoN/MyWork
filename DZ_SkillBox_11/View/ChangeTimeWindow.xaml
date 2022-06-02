@@ -18,11 +18,11 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="What changed"/>
-            <TextBox Name="OutPutChanged"/>
+            <TextBlock x:Name="WhatChanged1" Text=""/>
             <TextBlock Text="Type changed"/>
-            <TextBox Text="" Name="OutPutTypeChanged"/>
+            <TextBlock x:Name="TypeChanged"/>
             <TextBlock Text="Who changed"/>
-            <TextBox Text="" Name="OutPutWhoChanged"/>
+            <TextBlock x:Name="WhoChanged" Text=""/>
         </StackPanel>
         
     </Grid>

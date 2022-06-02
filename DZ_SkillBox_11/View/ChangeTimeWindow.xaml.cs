@@ -26,9 +26,22 @@ namespace DZ_SkillBox_11.View
             InitializeComponent();
         }
 
-        private void WhatChanged()
+        public void WhatChanged(int Supervisor)
         {
-            OutPutWhoChanged.Text = "da";
+            var name = Repository.RepositorySupervisor();
+
+            if (Supervisor == 0)
+            {
+                name = Repository.RepositorySupervisor();
+                WhatChanged1.Text = Repository.supervisors.ToString();
+            }
+            else if (Supervisor == 1)
+            {
+                name = Repository.RepositorySupervisor();
+                WhatChanged1.Text = Repository.supervisors.ToString();
+            }
+
+            WhatChanged1.Text = "dsadsadas";
         }
 
     }

@@ -43,7 +43,8 @@ namespace DZ_SkillBox_11.View
                                            InputPassportSeries.Text,
                                            InputPhoneNumber.Text,
                                            AddEditCombobox.SelectedIndex,
-                                           workers.Count + 1);
+                                           workers.Count + 1
+                                           );
         }
 
         private static int WID;
