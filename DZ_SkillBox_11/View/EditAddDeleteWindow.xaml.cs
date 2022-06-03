@@ -103,7 +103,7 @@ namespace DZ_SkillBox_11.View
             editAdd.InputPassportSeries.Text = worker.SeriesPassport;
             editAdd.InputPhoneNumber.Text = worker.PhoneNumber;
             editAdd.AddEditCombobox.SelectedIndex = department;
-
+           
             editAdd.Show();
         }
 

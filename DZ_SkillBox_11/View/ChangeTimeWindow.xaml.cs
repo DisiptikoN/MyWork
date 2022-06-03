@@ -21,27 +21,21 @@ namespace DZ_SkillBox_11.View
     /// </summary>
     public partial class ChangeTimeWindow : Window
     {
+        public List<ModificationData> modifications = new List<ModificationData>();
+        public List<Worker> workers = new List<Worker>();
+
+
         public ChangeTimeWindow()
         {
             InitializeComponent();
+            WhatChanged();
         }
 
-        public void WhatChanged(int Supervisor)
+        public void WhatChanged()
         {
-            var name = Repository.RepositorySupervisor();
-
-            if (Supervisor == 0)
-            {
-                name = Repository.RepositorySupervisor();
-                WhatChanged1.Text = Repository.supervisors.ToString();
-            }
-            else if (Supervisor == 1)
-            {
-                name = Repository.RepositorySupervisor();
-                WhatChanged1.Text = Repository.supervisors.ToString();
-            }
-
-            WhatChanged1.Text = "dsadsadas";
+            ModificationData data = new ModificationData();
+            Worker worker = new Worker();
+            WhatChanged1.Text = worker.EditHistory.ToString();
         }
 
     }

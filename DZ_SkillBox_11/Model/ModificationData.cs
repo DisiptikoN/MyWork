@@ -8,19 +8,24 @@ using DZ_SkillBox_11.View;
 
 namespace DZ_SkillBox_11.Model
 {
-    internal struct ModificationData
+    public struct ModificationData
     {
 
-        // дата и время изменения записи;
-        // какие данные изменены;
-        // тип изменений;
-        // кто изменил данные(консультант или менеджер).
 
-        public void ChangedWorker(Worker worker, DateTime dateTime, string DataChanged, Supervisor supervisor)
+        public string EditorName; // редактированное имя
+        public string EditorType; // как изменили добавление/редактирование
+        public DateTime EditData; // дата изминения
+        public string PrevDataState; // данные изминения 
+
+        public void EditClientData(Worker worker)
         {
-            worker.Name = worker.Name;
-
-
+            ModificationData mod = new ModificationData();
+            mod.EditorName = worker.Name;
+            mod.PrevDataState = worker.Name;
+            mod.EditData = DateTime.Now;
+            worker.EditHistory.Add(mod);
         }
+
+
     }
 }

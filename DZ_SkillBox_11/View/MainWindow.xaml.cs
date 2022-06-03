@@ -1,4 +1,5 @@
 ﻿using DZ_SkillBox_11.Model;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -162,6 +163,24 @@ namespace DZ_SkillBox_11.View
             return DepartmentId;
         }
 
+        private string FindSupervisor()
+        {
+            var ponit = check();
+            Supervisor supervisor = new Supervisor();
+            var checkName = supervisor.Name;
+
+            if (ponit == 0)
+            {
+                checkName = supervisor.Name;
+            }
+            else
+            {
+                checkName = supervisor.Name;
+            }
+
+            return checkName;
+        }
+
         /// <summary>
         /// Кнопка редактирования ПКМ
         /// </summary>
@@ -172,7 +191,6 @@ namespace DZ_SkillBox_11.View
             EditAddDeleteWindow.EditWorker(FindWorker(), FindDepartment());
             EditAddDeleteWindow.InWorkerId(FindWorkerId());
             ChangeTimeWindow changeTime = new ChangeTimeWindow();
-            changeTime.WhatChanged(CombWiw);
         }
 
         /// <summary>
@@ -198,10 +216,7 @@ namespace DZ_SkillBox_11.View
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();            
             editAdd.Show();
             editAdd.InputWorkerAdd();
-            
-            ChangeTimeWindow changeTime = new ChangeTimeWindow();
-            changeTime.WhatChanged(CombWiw);
-            
+  
         }
 
         private void ListViewUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)

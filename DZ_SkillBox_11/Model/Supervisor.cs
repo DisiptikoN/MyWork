@@ -21,6 +21,12 @@ namespace DZ_SkillBox_11.Model
             this.Id = Id;           
         }
 
+        public Supervisor()
+        {
+            this.Name = Name;
+
+        }
+
 
         public override string ToString()
         {

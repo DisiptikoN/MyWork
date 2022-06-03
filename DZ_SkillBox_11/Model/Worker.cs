@@ -1,5 +1,6 @@
 ﻿using DZ_SkillBox_11.View;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -160,8 +161,8 @@ namespace DZ_SkillBox_11.Model
         }
 
         public string WhoChanged { get;set; }
-       
 
+        
         public Worker()
         {
 
@@ -181,24 +182,7 @@ namespace DZ_SkillBox_11.Model
             
         }
 
-        //public Worker(string Name, string Lastname, string Patronymic, string NumberPhone, string SeriesPassport, string NumberPassport, int DpId,int WorkerId)
-        //{
-
-        //    this.Name = Name;
-        //    this.Lastname = Lastname;
-        //    this.Patronymic = Patronymic;
-        //    this.PhoneNumber = NumberPhone;
-        //    this.SeriesPassport = SeriesPassport;
-        //    this.NumberPassport = NumberPassport;
-        //    this.WorkerId = DpId;
-        //    this.WorkerId = WorkerId;
-        //    this.dateTime = DateTime.Now;
-            
-
-        //}
-
-       
-
+        public List<ModificationData> EditHistory = new List<ModificationData>();
         public override string ToString()
         {
             return $"{Name,7} {Lastname,15} {Patronymic,15} {PhoneNumber,10} {SeriesPassport,10} {NumberPassport,5}";
