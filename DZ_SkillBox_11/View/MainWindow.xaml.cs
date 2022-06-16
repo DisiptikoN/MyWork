@@ -1,5 +1,4 @@
 ﻿using DZ_SkillBox_11.Model;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,7 +20,6 @@ namespace DZ_SkillBox_11.View
         public static int numbers = 1;
         public static int numberAdd = 1;
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -30,8 +28,8 @@ namespace DZ_SkillBox_11.View
                 Data();
                 numbers = 0;
             }
-           
-                   
+
+
         }
 
         private void Data()
@@ -72,7 +70,7 @@ namespace DZ_SkillBox_11.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ComboBoxUsers.Items.Refresh();
-            ListViewUsers.Items.Refresh();     
+            ListViewUsers.Items.Refresh();
         }
 
 
@@ -107,7 +105,7 @@ namespace DZ_SkillBox_11.View
         private void ComboBoxUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListViewUsers.ItemsSource = Repository.workers.Where(find);
-            
+
         }
 
 
@@ -154,31 +152,52 @@ namespace DZ_SkillBox_11.View
         {
             Worker worker = new Worker();
             worker = ListViewUsers.SelectedItem as Worker;
-            return worker;  
+            return worker;
         }
 
         public int FindDepartment()
-        {    
+        {
             int DepartmentId = (ComboBoxUsers.SelectedItem as Department).DepartmentId;
             return DepartmentId;
         }
 
+        /// <summary>
+        /// Поиск руководителя
+        /// </summary>
+        /// <returns></returns>
         private string FindSupervisor()
         {
             var ponit = check();
-            Supervisor supervisor = new Supervisor();
-            var checkName = supervisor.Name;
-
+            string checkName;
+            var dara = Repository.RepositorySupervisor();
             if (ponit == 0)
             {
-                checkName = supervisor.Name;
+                checkName = dara[0].Name;
             }
             else
             {
-                checkName = supervisor.Name;
+                checkName = dara[1].Name;
             }
 
             return checkName;
+        }
+
+        /// <summary>
+        /// Узнаем что делали с сотрудником
+        /// </summary>
+        /// <returns></returns>
+        private string DeleteEditing(int numb)
+        {
+            string ForWhat;
+            if (numb == 0)
+            {
+                ForWhat = "Редактирование";
+            }
+            else
+            {
+                ForWhat = "Добавление";
+            }
+            return ForWhat;
         }
 
         /// <summary>
@@ -188,9 +207,12 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void EditClick(object sender, RoutedEventArgs e)
         {
+            ModificationData data = new ModificationData();
+            data.EditClientData(FindWorker(), FindSupervisor(), DeleteEditing(0));
             EditAddDeleteWindow.EditWorker(FindWorker(), FindDepartment());
             EditAddDeleteWindow.InWorkerId(FindWorkerId());
-            ChangeTimeWindow changeTime = new ChangeTimeWindow();
+            
+
         }
 
         /// <summary>
@@ -211,17 +233,17 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            
+
             numberAdd = 0;
-            EditAddDeleteWindow editAdd = new EditAddDeleteWindow();            
+            EditAddDeleteWindow editAdd = new EditAddDeleteWindow();
             editAdd.Show();
             editAdd.InputWorkerAdd();
-  
+
         }
 
         private void ListViewUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            
+
         }
 
         /// <summary>
@@ -233,6 +255,7 @@ namespace DZ_SkillBox_11.View
         {
             ChangeTimeWindow changeTimeWindow = new ChangeTimeWindow();
             changeTimeWindow.Show();
+            changeTimeWindow.WhatChanged(FindWorker());
         }
 
         private void ListViewUsers_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)

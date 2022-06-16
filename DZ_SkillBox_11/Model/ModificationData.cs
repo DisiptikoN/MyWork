@@ -16,14 +16,18 @@ namespace DZ_SkillBox_11.Model
         public string EditorType; // как изменили добавление/редактирование
         public DateTime EditData; // дата изминения
         public string PrevDataState; // данные изминения 
+        public int WorkerId; // идентификатор работника 
 
-        public void EditClientData(Worker worker)
+        public void EditClientData(Worker worker, string WhoChangeds, string TypeEdit)
         {
             ModificationData mod = new ModificationData();
-            mod.EditorName = worker.Name;
+            mod.EditorName = WhoChangeds;
+            mod.EditorType = TypeEdit;
             mod.PrevDataState = worker.Name;
             mod.EditData = DateTime.Now;
-            worker.EditHistory.Add(mod);
+            mod.WorkerId = worker.WorkerId;
+            Worker.EditHistory.Add(mod);
+           
         }
 
 

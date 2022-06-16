@@ -9,7 +9,7 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            
+
         </Grid.RowDefinitions>
 
         <StackPanel
@@ -17,13 +17,24 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Width="200">
-            <TextBlock Text="What changed"/>
-            <TextBlock x:Name="WhatChanged1" Text=""/>
+            <TextBlock Text="Who changed" Height="25" RenderTransformOrigin="0.494,0.547"/>
+            <TextBlock x:Name="WhoChanged" Text="" Height="44"/>
             <TextBlock Text="Type changed"/>
-            <TextBlock x:Name="TypeChanged"/>
-            <TextBlock Text="Who changed"/>
-            <TextBlock x:Name="WhoChanged" Text=""/>
+            <TextBlock x:Name="TypeChanged" Height="54"/>
+            <TextBlock Text="What changed"/>
+            <TextBlock x:Name="WhatChanged1" Text="" Height="58"/>
+            <TextBlock Text="Data changed"/>
         </StackPanel>
-        
+        <Label Content="" x:Name="DataChanged" HorizontalAlignment="Center" Margin="0,342,0,0" VerticalAlignment="Top" Width="194" Height="34" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.013"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
     </Grid>
 </Window>

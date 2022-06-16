@@ -182,7 +182,7 @@ namespace DZ_SkillBox_11.Model
             
         }
 
-        public List<ModificationData> EditHistory = new List<ModificationData>();
+        public static List<ModificationData> EditHistory = new List<ModificationData>();
         public override string ToString()
         {
             return $"{Name,7} {Lastname,15} {Patronymic,15} {PhoneNumber,10} {SeriesPassport,10} {NumberPassport,5}";

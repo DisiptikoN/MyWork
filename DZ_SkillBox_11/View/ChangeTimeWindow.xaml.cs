@@ -21,21 +21,37 @@ namespace DZ_SkillBox_11.View
     /// </summary>
     public partial class ChangeTimeWindow : Window
     {
-        public List<ModificationData> modifications = new List<ModificationData>();
-        public List<Worker> workers = new List<Worker>();
-
-
         public ChangeTimeWindow()
         {
             InitializeComponent();
-            WhatChanged();
+
         }
 
-        public void WhatChanged()
+        public void WhatChanged(Worker worker)
         {
-            ModificationData data = new ModificationData();
-            Worker worker = new Worker();
-            WhatChanged1.Text = worker.EditHistory.ToString();
+            var data = Worker.EditHistory;
+
+            foreach (var item in data)
+            {
+                if (item.WorkerId == worker.WorkerId)
+                {
+                    foreach (var item1 in Repository.workers)
+                    {
+                        if (worker.WorkerId == item1.WorkerId)
+                        {
+                            foreach (var items in Worker.EditHistory)
+                            {
+                                WhoChanged.Text = items.EditorName;
+                                DataChanged.Content = items.EditData;
+                                TypeChanged.Text = item.EditorType;
+                                WhatChanged1.Text = item.PrevDataState;
+                            }
+
+                        }
+                    }
+                }
+
+            }
         }
 
     }
