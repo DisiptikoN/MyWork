@@ -104,7 +104,7 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void ComboBoxUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListViewUsers.ItemsSource = Repository.workers.Where(find);
+            ListViewUsers.ItemsSource = Repository.bankClients.Where(Find);
 
         }
 
@@ -137,22 +137,22 @@ namespace DZ_SkillBox_11.View
             }
         }
 
-        private bool find(Worker arg)
+        private bool Find(BankClient arg)
         {
             return arg.DepartmentId == (ComboBoxUsers.SelectedItem as Department).DepartmentId;
         }
 
-        public int FindWorkerId()
+        public int FindClientId()
         {
-            int WorkerId = (ListViewUsers.SelectedItem as Worker).WorkerId;
-            return WorkerId;
+            int BankClientId = (ListViewUsers.SelectedItem as BankClient).ClientId;
+            return BankClientId;
         }
 
-        public Worker FindWorker()
+        public BankClient FindClient()
         {
-            Worker worker = new Worker();
-            worker = ListViewUsers.SelectedItem as Worker;
-            return worker;
+            BankClient bankClient = new BankClient();
+            bankClient = ListViewUsers.SelectedItem as BankClient;
+            return bankClient;
         }
 
         public int FindDepartment()
@@ -165,7 +165,7 @@ namespace DZ_SkillBox_11.View
         /// Поиск руководителя
         /// </summary>
         /// <returns></returns>
-        private string FindSupervisor()
+        private string FindWorker()
         {
             var ponit = check();
             string checkName;
@@ -208,9 +208,9 @@ namespace DZ_SkillBox_11.View
         private void EditClick(object sender, RoutedEventArgs e)
         {
             ModificationData data = new ModificationData();
-            data.EditClientData(FindWorker(), FindSupervisor(), DeleteEditing(0));
-            EditAddDeleteWindow.EditWorker(FindWorker(), FindDepartment());
-            EditAddDeleteWindow.InWorkerId(FindWorkerId());
+            data.EditClientData(FindClient(), FindWorker(), DeleteEditing(0));
+            EditAddDeleteWindow.EditClient(FindClient(), FindDepartment());
+            EditAddDeleteWindow.InClientId(FindClientId());
             
 
         }
@@ -222,8 +222,8 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
-            EditAddDeleteWindow.DelWorker(FindWorker());
-            MessageBox.Show($"Удален: {FindWorker().Name}");
+            EditAddDeleteWindow.DelClient(FindClient());
+            MessageBox.Show($"Удален: {FindClient().Name}");
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace DZ_SkillBox_11.View
             numberAdd = 0;
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();
             editAdd.Show();
-            editAdd.InputWorkerAdd();
+            editAdd.InputClientAdd();
 
         }
 
@@ -255,7 +255,7 @@ namespace DZ_SkillBox_11.View
         {
             ChangeTimeWindow changeTimeWindow = new ChangeTimeWindow();
             changeTimeWindow.Show();
-            changeTimeWindow.WhatChanged(FindWorker());
+            changeTimeWindow.WhatChanged(FindClient());
         }
 
         private void ListViewUsers_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)

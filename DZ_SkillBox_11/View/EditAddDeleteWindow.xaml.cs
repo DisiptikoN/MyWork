@@ -31,45 +31,41 @@ namespace DZ_SkillBox_11.View
         }
 
         /// <summary>
-        /// Добавление работника через форму
+        /// Добавление клиента через форму
         /// </summary>
-        public void InputWorkerAdd()
+        public void InputClientAdd()
         {
-            workers = new List<Worker>();
-            ActionsAddDeleteEdit.AddWorker(InputName.Text,
+            List<BankClient> bankClient = new List<BankClient>();
+            ActionsAddDeleteEdit.AddClient(InputName.Text,
                                            InputLastName.Text,
                                            InputPatronymic.Text,
                                            InputPssportNumber.Text,
                                            InputPassportSeries.Text,
                                            InputPhoneNumber.Text,
                                            AddEditCombobox.SelectedIndex,
-                                           workers.Count + 1
+                                           bankClient.Count + 1
                                            );
         }
 
         private static int WID;
 
         /// <summary>
-        /// Передача индетификатора работника
+        /// Передача индетификатора клиента
         /// </summary>
         /// <param name="WorkerId"></param>
         /// <returns></returns>
-        public static int InWorkerId(int WorkerId)
+        public static int InClientId(int ClientId)
         {
-            WID = WorkerId;
+            WID = ClientId;
             return WID;
         }
 
         /// <summary>
-        /// Редактирование сотрудник
+        /// Редактирование клиента
         /// </summary>
-
-
-
-
-        private void InputWorkerEdd()
+        private void InputClientEdd()
         {
-            ActionsAddDeleteEdit.EddWorker(InputName.Text,
+            ActionsAddDeleteEdit.EddClient(InputName.Text,
                                            InputLastName.Text,
                                            InputPatronymic.Text,
                                            InputPssportNumber.Text,
@@ -80,12 +76,12 @@ namespace DZ_SkillBox_11.View
         }
 
         /// <summary>
-        /// Удаление работников по id
+        /// Удаление клиента по id
         /// </summary>
         /// <param name="name"></param>
-        public static void DelWorker(Worker worker)
+        public static void DelClient(BankClient bankClient)
         {
-            Repository.workers.Remove(worker);
+            Repository.bankClients.Remove(bankClient);
         }
 
         /// <summary>
@@ -93,15 +89,15 @@ namespace DZ_SkillBox_11.View
         /// </summary>
         /// <param name="worker"></param>
         /// <param name="department"></param>
-        public static void EditWorker(Worker worker, int department)
+        public static void EditClient(BankClient bankClient, int department)
         {
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();
-            editAdd.InputName.Text = worker.Name;
-            editAdd.InputLastName.Text = worker.Lastname;
-            editAdd.InputPatronymic.Text = worker.Patronymic;
-            editAdd.InputPssportNumber.Text = worker.NumberPassport;
-            editAdd.InputPassportSeries.Text = worker.SeriesPassport;
-            editAdd.InputPhoneNumber.Text = worker.PhoneNumber;
+            editAdd.InputName.Text = bankClient.Name;
+            editAdd.InputLastName.Text = bankClient.Lastname;
+            editAdd.InputPatronymic.Text = bankClient.Patronymic;
+            editAdd.InputPssportNumber.Text = bankClient.NumberPassport;
+            editAdd.InputPassportSeries.Text = bankClient.SeriesPassport;
+            editAdd.InputPhoneNumber.Text = bankClient.PhoneNumber;
             editAdd.AddEditCombobox.SelectedIndex = department;
            
             editAdd.Show();
@@ -134,7 +130,7 @@ namespace DZ_SkillBox_11.View
                          InputPssportNumber.Text != string.Empty ||
                          InputPassportSeries.Text != string.Empty)
                 {
-                    InputWorkerEdd();
+                    InputClientEdd();
                     MessageBox.Show("Данные сотрудника изминены");
                     Close();
                 }
@@ -149,7 +145,7 @@ namespace DZ_SkillBox_11.View
                     InputPssportNumber.Text != string.Empty ||
                     InputPassportSeries.Text != string.Empty)
                 {
-                    InputWorkerAdd();
+                    InputClientAdd();
                     MessageBox.Show("Сотрудник добавлен");
                     Close();
                 }

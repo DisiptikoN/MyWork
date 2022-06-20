@@ -18,15 +18,15 @@ namespace DZ_SkillBox_11.Model
         public string PrevDataState; // данные изминения 
         public int WorkerId; // идентификатор работника 
 
-        public void EditClientData(Worker worker, string WhoChangeds, string TypeEdit)
+        public void EditClientData(BankClient bankClient, string WhoChangeds, string TypeEdit)
         {
             ModificationData mod = new ModificationData();
             mod.EditorName = WhoChangeds;
             mod.EditorType = TypeEdit;
-            mod.PrevDataState = worker.Name;
+            mod.PrevDataState = bankClient.Name;
             mod.EditData = DateTime.Now;
-            mod.WorkerId = worker.WorkerId;
-            Worker.EditHistory.Add(mod);
+            mod.WorkerId = bankClient.ClientId;
+            BankClient.EditHistory.Add(mod);
            
         }
 

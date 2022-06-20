@@ -1,6 +1,4 @@
 ﻿using DZ_SkillBox_11.View;
-using System.Collections.Generic;
-using System.Linq;
 using System;
 
 
@@ -21,18 +19,18 @@ namespace DZ_SkillBox_11.Model
         /// <param name="numberPhone"></param>
         /// <param name="DpId"></param>
         /// <param name="WorkerId"></param>
-        public static void AddWorker(string name, 
-                                     string lastName, 
-                                     string patronymic, 
-                                     string numberPassport, 
-                                     string seriesPassport, 
-                                     string numberPhone, 
-                                        int DpId, 
+        public static void AddClient(string name,
+                                     string lastName,
+                                     string patronymic,
+                                     string numberPassport,
+                                     string seriesPassport,
+                                     string numberPhone,
+                                        int DpId,
                                         int WorkerId)
-        {         
-            Repository.workers.Add(new Worker(name, lastName, patronymic, numberPhone, seriesPassport, numberPassport, DpId, WorkerId));            
+        {
+            Repository.bankClients.Add(new BankClient(name, lastName, patronymic, numberPhone, seriesPassport, numberPassport, DpId, WorkerId));
         }
-       
+
         /// <summary>
         /// Редактирование сотрудника
         /// </summary>
@@ -44,11 +42,11 @@ namespace DZ_SkillBox_11.Model
         /// <param name="numberPhone"></param>
         /// <param name="DpId"></param>
         /// <param name="WorkerId"></param>
-        public static void EddWorker(string name, string lastName, string patronymic, string numberPassport, string seriesPassport, string numberPhone, int DpId, int WorkerId)
+        public static void EddClient(string name, string lastName, string patronymic, string numberPassport, string seriesPassport, string numberPhone, int DpId, int WorkerId)
         {
-            foreach (var item in Repository.workers)
+            foreach (var item in Repository.bankClients)
             {
-                if (WorkerId == item.WorkerId)
+                if (WorkerId == item.ClientId)
                 {
                     item.Name = name;
                     item.Lastname = lastName;
@@ -61,7 +59,7 @@ namespace DZ_SkillBox_11.Model
 
                 }
 
-                
+
             }
 
         }
