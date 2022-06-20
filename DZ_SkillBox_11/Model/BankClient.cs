@@ -164,7 +164,7 @@ namespace DZ_SkillBox_11.Model
             }
         }
 
-        
+        public static List<ModificationData> EditHistory = new List<ModificationData>();
 
 
         public BankClient()
@@ -186,7 +186,7 @@ namespace DZ_SkillBox_11.Model
 
         }
 
-        public static List<ModificationData> EditHistory = new List<ModificationData>();
+        
 
         public override string ToString()
         {
