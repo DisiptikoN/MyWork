@@ -1,6 +1,6 @@
 ﻿namespace DZ_SkillBox_11.Model
 {
-    public class Consultant : Supervisor
+    public class Consultant : Worker
     {
        public Consultant(string Name, int Id): base (Name, Id)
         {

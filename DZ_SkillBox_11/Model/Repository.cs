@@ -12,29 +12,29 @@ namespace DZ_SkillBox_11.Model
 
 
 
-        public static List<Worker> workers = new List<Worker>();
+        public static List<BankClient> bankClients = new List<BankClient>();
         public static List<Department> departments = new List<Department>();
-        public static List<Supervisor> supervisors = new List<Supervisor>();
+        public static List<Worker> workers = new List<Worker>();
 
         private Repository() { }
 
         /// <summary>
         /// Создание сотрудников
         /// </summary>
-        /// <param name="CountWorker"></param>
+        /// <param name="CountClient"></param>
         /// <param name="CountDepartments"></param>
-        private Repository(int CountWorker, int CountDepartments)
+        private Repository(int CountClient, int CountDepartments)
         {
 
 
-            workers = new List<Worker>();
+            bankClients = new List<BankClient>();
             departments = new List<Department>();
 
-            if (workers != null)
+            if (bankClients != null)
             {
-                for (int i = 0; i < CountWorker; i++)
+                for (int i = 0; i < CountClient; i++)
                 {
-                    workers.Add(new Worker($"Name{i + 1}",
+                    bankClients.Add(new BankClient($"Name{i + 1}",
                         $"LastName{i + 2}",
                         $"Patronymic{i + 2}",
                         "89131233212",
@@ -61,20 +61,20 @@ namespace DZ_SkillBox_11.Model
         /// <summary>
         /// Создание руководителей
         /// </summary>
-        public static List<Supervisor> RepositorySupervisor() 
+        public static List<Worker> RepositorySupervisor() 
         {
-           List<Supervisor> supervisors = new List<Supervisor>();
+           List<Worker> workers = new List<Worker>();
 
-            supervisors.Add(new Manager("Менеджер", 1));
-            supervisors.Add(new Consultant("Консультант", 2));
+            workers.Add(new Manager("Менеджер", 1));
+            workers.Add(new Consultant("Консультант", 2));
 
-            return supervisors;
+            return workers;
 
         }
 
-        public static Repository CreateRepository(int CountWorker = 50, int CountDepartments = 10)
+        public static Repository CreateRepository(int CountClient = 50, int CountDepartments = 10)
         {
-            return new Repository(CountWorker, CountDepartments);
+            return new Repository(CountClient, CountDepartments);
         }   
     }
 }

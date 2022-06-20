@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DZ_SkillBox_11.Model;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using DZ_SkillBox_11;
-using DZ_SkillBox_11.Model;
 
 namespace DZ_SkillBox_11.View
 {
@@ -27,24 +14,23 @@ namespace DZ_SkillBox_11.View
 
         }
 
-        public void WhatChanged(Worker worker)
+        public void WhatChanged(BankClient bankClient)
         {
-            var data = Worker.EditHistory;
 
-            foreach (var item in data)
+            foreach (var item in BankClient.EditHistory)
             {
-                if (item.WorkerId == worker.WorkerId)
+                if (item.WorkerId == bankClient.ClientId)
                 {
-                    foreach (var item1 in Repository.workers)
+                    foreach (var item1 in Repository.bankClients)
                     {
-                        if (worker.WorkerId == item1.WorkerId)
+                        if (bankClient.ClientId == item1.ClientId)
                         {
-                            foreach (var items in Worker.EditHistory)
+                            foreach (var items in BankClient.EditHistory)
                             {
                                 WhoChanged.Text = items.EditorName;
                                 DataChanged.Content = items.EditData;
-                                TypeChanged.Text = item.EditorType;
-                                WhatChanged1.Text = item.PrevDataState;
+                                TypeChanged.Text = items.EditorType;
+                                WhatChanged1.Text = items.PrevDataState;
                             }
 
                         }

@@ -1,6 +1,6 @@
 ﻿namespace DZ_SkillBox_11.Model
 {
-    public class Manager : Supervisor
+    public class Manager : Worker
     {
         public Manager(string Name, int Id) : base(Name, Id)
         {

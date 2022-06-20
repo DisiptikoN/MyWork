@@ -30,7 +30,7 @@ namespace DZ_SkillBox_11.Model
                                         int DpId, 
                                         int WorkerId)
         {         
-            Repository.workers.Add(new Worker(name, lastName, patronymic, numberPhone, seriesPassport, numberPassport, DpId, WorkerId));            
+            Repository.bankClients.Add(new BankClient(name, lastName, patronymic, numberPhone, seriesPassport, numberPassport, DpId, WorkerId));            
         }
        
         /// <summary>
@@ -46,9 +46,9 @@ namespace DZ_SkillBox_11.Model
         /// <param name="WorkerId"></param>
         public static void EddWorker(string name, string lastName, string patronymic, string numberPassport, string seriesPassport, string numberPhone, int DpId, int WorkerId)
         {
-            foreach (var item in Repository.workers)
+            foreach (var item in Repository.bankClients)
             {
-                if (WorkerId == item.WorkerId)
+                if (WorkerId == item.ClientId)
                 {
                     item.Name = name;
                     item.Lastname = lastName;

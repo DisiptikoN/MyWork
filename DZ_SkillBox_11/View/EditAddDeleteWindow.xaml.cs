@@ -83,9 +83,9 @@ namespace DZ_SkillBox_11.View
         /// Удаление работников по id
         /// </summary>
         /// <param name="name"></param>
-        public static void DelWorker(Worker worker)
+        public static void DelWorker(BankClient bankClient)
         {
-            Repository.workers.Remove(worker);
+            Repository.bankClients.Remove(bankClient);
         }
 
         /// <summary>
@@ -93,15 +93,15 @@ namespace DZ_SkillBox_11.View
         /// </summary>
         /// <param name="worker"></param>
         /// <param name="department"></param>
-        public static void EditWorker(Worker worker, int department)
+        public static void EditWorker(BankClient bankClient, int department)
         {
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();
-            editAdd.InputName.Text = worker.Name;
-            editAdd.InputLastName.Text = worker.Lastname;
-            editAdd.InputPatronymic.Text = worker.Patronymic;
-            editAdd.InputPssportNumber.Text = worker.NumberPassport;
-            editAdd.InputPassportSeries.Text = worker.SeriesPassport;
-            editAdd.InputPhoneNumber.Text = worker.PhoneNumber;
+            editAdd.InputName.Text = bankClient.Name;
+            editAdd.InputLastName.Text = bankClient.Lastname;
+            editAdd.InputPatronymic.Text = bankClient.Patronymic;
+            editAdd.InputPssportNumber.Text = bankClient.NumberPassport;
+            editAdd.InputPassportSeries.Text = bankClient.SeriesPassport;
+            editAdd.InputPhoneNumber.Text = bankClient.PhoneNumber;
             editAdd.AddEditCombobox.SelectedIndex = department;
            
             editAdd.Show();
