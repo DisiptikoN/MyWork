@@ -61,7 +61,7 @@ namespace DZ_SkillBox_11.Model
         /// <summary>
         /// Создание руководителей
         /// </summary>
-        public static List<Worker> RepositorySupervisor() 
+        public static List<Worker> RepositoryWorker() 
         {
            List<Worker> workers = new List<Worker>();
 

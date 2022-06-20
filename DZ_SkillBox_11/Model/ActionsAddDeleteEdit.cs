@@ -9,7 +9,7 @@ namespace DZ_SkillBox_11.Model
     {
 
         /// <summary>
-        /// Добавление сотрудника 
+        /// Добавление клиента 
         /// </summary>
         /// <param name="name"></param>
         /// <param name="lastName"></param>
@@ -32,7 +32,7 @@ namespace DZ_SkillBox_11.Model
         }
 
         /// <summary>
-        /// Редактирование сотрудника
+        /// Редактирование клиента
         /// </summary>
         /// <param name="name"></param>
         /// <param name="lastName"></param>

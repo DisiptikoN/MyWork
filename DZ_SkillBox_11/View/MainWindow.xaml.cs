@@ -36,7 +36,7 @@ namespace DZ_SkillBox_11.View
         {
             data = Repository.CreateRepository();
             ComboBoxUsers.ItemsSource = Repository.departments;
-            var data1 = Repository.RepositorySupervisor();
+            var data1 = Repository.RepositoryWorker();
             ComboBoxWiw.ItemsSource = data1;
             ComboBoxUsers.IsEnabled = false;
         }
@@ -169,7 +169,7 @@ namespace DZ_SkillBox_11.View
         {
             var ponit = check();
             string checkName;
-            var dara = Repository.RepositorySupervisor();
+            var dara = Repository.RepositoryWorker();
             if (ponit == 0)
             {
                 checkName = dara[0].Name;
@@ -183,7 +183,7 @@ namespace DZ_SkillBox_11.View
         }
 
         /// <summary>
-        /// Узнаем что делали с сотрудником
+        /// Узнаем что делали с клиентом
         /// </summary>
         /// <returns></returns>
         private string DeleteEditing(int numb)
