@@ -11,7 +11,6 @@ namespace DZ_SkillBox_11.View
         public ChangeTimeWindow()
         {
             InitializeComponent();
-
         }
 
         public void WhatChanged(BankClient bankClient)
@@ -24,15 +23,11 @@ namespace DZ_SkillBox_11.View
                     foreach (var item1 in Repository.bankClients)
                     {
                         if (bankClient.ClientId == item1.ClientId)
-                        {
-                            foreach (var items in BankClient.EditHistory)
-                            {
-                                WhoChanged.Text = items.EditorName;
-                                DataChanged.Content = items.EditData;
-                                TypeChanged.Text = items.EditorType;
-                                WhatChanged1.Text = items.PrevDataState;
-                            }
-
+                        {        
+                                WhoChanged.Text = item.EditorName;
+                                DataChanged.Content = item.EditData;
+                                TypeChanged.Text = item.EditorType;
+                                WhatChanged1.Text = item.PrevDataState;
                         }
                     }
                 }

@@ -91,6 +91,7 @@ namespace DZ_SkillBox_11.View
         /// <param name="department"></param>
         public static void EditClient(BankClient bankClient, int department)
         {
+
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();
             editAdd.InputName.Text = bankClient.Name;
             editAdd.InputLastName.Text = bankClient.Lastname;

@@ -20,13 +20,16 @@ namespace DZ_SkillBox_11.Model
 
         public void EditClientData(BankClient bankClient, string WhoChangeds, string TypeEdit)
         {
-            ModificationData mod = new ModificationData();
-            mod.EditorName = WhoChangeds;
-            mod.EditorType = TypeEdit;
-            mod.PrevDataState = bankClient.Name;
-            mod.EditData = DateTime.Now;
-            mod.WorkerId = bankClient.ClientId;
-            BankClient.EditHistory.Add(mod);
+            
+                ModificationData mod = new ModificationData();
+                mod.EditorName = WhoChangeds;
+                mod.EditorType = TypeEdit;
+                mod.PrevDataState = bankClient.Name;
+                mod.EditData = DateTime.Now;
+                mod.WorkerId = bankClient.ClientId;
+                BankClient.EditHistory.Add(mod);
+            
+            
            
         }
 

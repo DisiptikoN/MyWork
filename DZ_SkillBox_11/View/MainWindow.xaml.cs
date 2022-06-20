@@ -144,8 +144,13 @@ namespace DZ_SkillBox_11.View
 
         public int FindClientId()
         {
-            int BankClientId = (ListViewUsers.SelectedItem as BankClient).ClientId;
-            return BankClientId;
+            
+                int BankClientId = (ListViewUsers.SelectedItem as BankClient).ClientId;
+                return BankClientId;
+          
+                
+            
+           
         }
 
         public BankClient FindClient()
@@ -207,10 +212,14 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void EditClick(object sender, RoutedEventArgs e)
         {
-            ModificationData data = new ModificationData();
-            data.EditClientData(FindClient(), FindWorker(), DeleteEditing(0));
-            EditAddDeleteWindow.EditClient(FindClient(), FindDepartment());
-            EditAddDeleteWindow.InClientId(FindClientId());
+            
+                ModificationData data = new ModificationData();
+                data.EditClientData(FindClient(), FindWorker(), DeleteEditing(0));
+                EditAddDeleteWindow.EditClient(FindClient(), FindDepartment());
+                EditAddDeleteWindow.InClientId(FindClientId());
+            
+         
+           
             
 
         }
