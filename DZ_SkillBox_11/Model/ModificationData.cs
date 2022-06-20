@@ -16,7 +16,7 @@ namespace DZ_SkillBox_11.Model
         public string EditorType; // как изменили добавление/редактирование
         public DateTime EditData; // дата изминения
         public string PrevDataState; // данные изминения 
-        public int WorkerId; // идентификатор работника 
+        public int WorkerId; // идентификатор работника  
 
         public void EditClientData(BankClient bankClient, string WhoChangeds, string TypeEdit)
         {
