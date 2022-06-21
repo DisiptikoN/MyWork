@@ -46,7 +46,7 @@ namespace DZ_SkillBox_11.View
         /// </summary>
         private void Create()
         {
-            CombWiw = check();
+            CombWiw = Check();
 
             if (CombWiw == 0)
             {
@@ -84,7 +84,7 @@ namespace DZ_SkillBox_11.View
         /// Проверка на доступ к выбору департамента
         /// </summary>
         /// <returns></returns>
-        public int check()
+        public int Check()
         {
             var point = ComboBoxWiw.SelectedIndex;
 
@@ -105,7 +105,6 @@ namespace DZ_SkillBox_11.View
         private void ComboBoxUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListViewUsers.ItemsSource = Repository.bankClients.Where(Find);
-
         }
 
 
@@ -117,7 +116,7 @@ namespace DZ_SkillBox_11.View
         private void ComboBoxWiw_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             bool checked1 = true;
-            check();
+            Check();
             while (checked1)
             {
                 if (CombWiw == 0)
@@ -143,14 +142,9 @@ namespace DZ_SkillBox_11.View
         }
 
         public int FindClientId()
-        {
-            
-                int BankClientId = (ListViewUsers.SelectedItem as BankClient).ClientId;
-                return BankClientId;
-          
-                
-            
-           
+        {           
+            int BankClientId = (ListViewUsers.SelectedItem as BankClient).ClientId;
+            return BankClientId;
         }
 
         public BankClient FindClient()
@@ -172,9 +166,10 @@ namespace DZ_SkillBox_11.View
         /// <returns></returns>
         private string FindWorker()
         {
-            var ponit = check();
+            var ponit = Check();
             string checkName;
             var dara = Repository.RepositoryWorker();
+           
             if (ponit == 0)
             {
                 checkName = dara[0].Name;
@@ -211,17 +206,11 @@ namespace DZ_SkillBox_11.View
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void EditClick(object sender, RoutedEventArgs e)
-        {
-            
-                ModificationData data = new ModificationData();
-                data.EditClientData(FindClient(), FindWorker(), DeleteEditing(0));
-                EditAddDeleteWindow.EditClient(FindClient(), FindDepartment());
-                EditAddDeleteWindow.InClientId(FindClientId());
-            
-         
-           
-            
-
+        {          
+            ModificationData data = new ModificationData();
+            data.EditClientData(FindClient(), FindWorker(), DeleteEditing(0));
+            EditAddDeleteWindow.EditClient(FindClient(), FindDepartment());
+            EditAddDeleteWindow.InClientId(FindClientId());
         }
 
         /// <summary>
@@ -242,12 +231,10 @@ namespace DZ_SkillBox_11.View
         /// <param name="e"></param>
         private void AddClick(object sender, RoutedEventArgs e)
         {
-
             numberAdd = 0;
             EditAddDeleteWindow editAdd = new EditAddDeleteWindow();
             editAdd.Show();
             editAdd.InputClientAdd();
-
         }
 
         private void ListViewUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
