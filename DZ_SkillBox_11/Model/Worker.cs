@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-
-namespace DZ_SkillBox_11.Model
+﻿namespace DZ_SkillBox_11.Model
 {
 
 
-    public class Worker
+    public class Worker 
     {
 
 
@@ -30,7 +26,7 @@ namespace DZ_SkillBox_11.Model
             this.Name = Name;
 
         }
-
+       
 
         public override string ToString()
         {

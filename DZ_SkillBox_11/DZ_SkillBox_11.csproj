@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\ActionsAddDeleteEdit.cs" />
+    <Compile Include="Model\ActionWhithTheClient.cs" />
     <Compile Include="Model\BankClient.cs" />
     <Compile Include="Model\Consultant.cs" />
     <Compile Include="Model\Department.cs" />

@@ -14,7 +14,6 @@ namespace DZ_SkillBox_11.View
     public partial class EditAddDeleteWindow : Window
     {
 
-        public ActionsAddDeleteEdit actions = new ActionsAddDeleteEdit();
         public static List<Worker> workers = new List<Worker>();
 
 
@@ -36,7 +35,11 @@ namespace DZ_SkillBox_11.View
         public void InputClientAdd()
         {
             List<BankClient> bankClient = new List<BankClient>();
-            ActionsAddDeleteEdit.AddClient(InputName.Text,
+         
+            if (MainWindow.CombWiw == 1)
+            {
+                Manager manager = new Manager();
+                manager.AddClient(InputName.Text,
                                            InputLastName.Text,
                                            InputPatronymic.Text,
                                            InputPssportNumber.Text,
@@ -45,6 +48,20 @@ namespace DZ_SkillBox_11.View
                                            AddEditCombobox.SelectedIndex,
                                            bankClient.Count + 1
                                            );
+            }
+            else
+            {
+                Consultant consultant = new Consultant();
+                consultant.AddClient(InputName.Text,
+                                           InputLastName.Text,
+                                           InputPatronymic.Text,
+                                           InputPssportNumber.Text,
+                                           InputPassportSeries.Text,
+                                           InputPhoneNumber.Text,
+                                           AddEditCombobox.SelectedIndex,
+                                           bankClient.Count + 1
+                                           );
+            }
         }
 
         private static int WID;
@@ -65,14 +82,32 @@ namespace DZ_SkillBox_11.View
         /// </summary>
         private void InputClientEdd()
         {
-            ActionsAddDeleteEdit.EddClient(InputName.Text,
-                                           InputLastName.Text,
-                                           InputPatronymic.Text,
-                                           InputPssportNumber.Text,
-                                           InputPassportSeries.Text,
-                                           InputPhoneNumber.Text,
-                                           AddEditCombobox.SelectedIndex,
-                                           WID);
+
+            if (MainWindow.CombWiw == 1)
+            {
+                Manager manager = new Manager();
+                manager.EditClient(InputName.Text,
+                                               InputLastName.Text,
+                                               InputPatronymic.Text,
+                                               InputPssportNumber.Text,
+                                               InputPassportSeries.Text,
+                                               InputPhoneNumber.Text,
+                                               AddEditCombobox.SelectedIndex,
+                                               WID);
+            }
+            else
+            {
+                Consultant consultant = new Consultant();
+                consultant.EditClient(InputName.Text,
+                                               InputLastName.Text,
+                                               InputPatronymic.Text,
+                                               InputPssportNumber.Text,
+                                               InputPassportSeries.Text,
+                                               InputPhoneNumber.Text,
+                                               AddEditCombobox.SelectedIndex,
+                                               WID);
+            }
+            
         }
 
         /// <summary>
