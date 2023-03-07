@@ -2,7 +2,7 @@
 
 namespace DZ_SkillBox_11.Model
 {
-    public class Manager : Worker, ActionWhithTheClient
+    public class Manager : Worker, IActionWhithTheClient
     {
         public Manager(string Name, int Id) : base(Name, Id)
         {
@@ -14,6 +14,8 @@ namespace DZ_SkillBox_11.Model
         {
 
         }
+
+
 
         public void AddClient(string name,
                               string lastName,

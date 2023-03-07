@@ -2,7 +2,7 @@
 
 namespace DZ_SkillBox_11.Model
 {
-    public class Consultant : Worker, ActionWhithTheClient
+    public class Consultant : Worker, IActionWhithTheClient
     {
        public Consultant(string Name, int Id): base (Name, Id)
         {

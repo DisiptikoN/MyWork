@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DZ_SkillBox_11.Model
 {
-    internal interface ActionWhithTheClient
+    internal interface IActionWhithTheClient
     {
         void AddClient(string name,
                                      string lastName,
