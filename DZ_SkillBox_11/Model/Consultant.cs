@@ -15,7 +15,7 @@ namespace DZ_SkillBox_11.Model
 
         }
 
-        public void AddClient(string name,
+        void IActionWhithTheClient.AddClient(string name,
                                      string lastName,
                                      string patronymic,
                                      string numberPassport,
@@ -24,8 +24,10 @@ namespace DZ_SkillBox_11.Model
                                         int DpId,
                                         int WorkerId)
         {
-            throw new System.NotImplementedException();
+            Repository.bankClients.Add(new BankClient(name, lastName, patronymic, numberPhone, seriesPassport, numberPassport, DpId, WorkerId));
         }
+
+        
 
         public void EditClient(string name,
                               string lastName,
