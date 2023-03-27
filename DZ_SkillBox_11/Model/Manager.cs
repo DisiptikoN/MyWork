@@ -17,7 +17,7 @@ namespace DZ_SkillBox_11.Model
 
 
 
-        public void AddClient(string name,
+        void IActionWhithTheClient.AddClient(string name,
                               string lastName,
                               string patronymic,
                               string numberPassport,

@@ -8,7 +8,7 @@ namespace DZ_SkillBox_11.Model
 {
     internal interface IActionWhithTheClient
     {
-        void AddClient(string name,
+         void AddClient(string name,
                                      string lastName,
                                      string patronymic,
                                      string numberPassport,
@@ -16,7 +16,7 @@ namespace DZ_SkillBox_11.Model
                                      string numberPhone,
                                         int DpId,
                                         int WorkerId);
-        void RemoveClient();
-        void EditClient(string name, string lastName, string patronymic, string numberPassport, string seriesPassport, string numberPhone, int DpId, int WorkerId);
+         void RemoveClient();
+         void EditClient(string name, string lastName, string patronymic, string numberPassport, string seriesPassport, string numberPhone, int DpId, int WorkerId);
     }
 }

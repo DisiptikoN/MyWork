@@ -11,7 +11,7 @@ namespace DZ_SkillBox_11.View
     /// <summary>
     /// Логика взаимодействия для EditAddDeleteWindow.xaml
     /// </summary>
-    public partial class EditAddDeleteWindow : Window
+    public partial class EditAddDeleteWindow : Window, IActionWhithTheClient
     {
 
         public static List<Worker> workers = new List<Worker>();
@@ -29,6 +29,39 @@ namespace DZ_SkillBox_11.View
 
         }
 
+        void IActionWhithTheClient.AddClient(string name, string lastName, string patronymic, string numberPassport, string seriesPassport, string numberPhone, int DpId, int WorkerId)
+        {
+            List<BankClient> bankClient = new List<BankClient>();
+
+            if (MainWindow.CombWiw == 1)
+            {
+                Manager manager = new Manager();
+
+                manager.AddClient(name = InputName.Text,
+                                        lastName =  InputLastName.Text,
+                                           patronymic= InputPatronymic.Text,
+                                           numberPassport= InputPssportNumber.Text,
+                                           seriesPassport = InputPassportSeries.Text,
+                                           numberPhone = InputPhoneNumber.Text,
+                                           AddEditCombobox.SelectedIndex,
+                                           bankClient.Count + 1
+                                           );
+            }
+            else
+            {
+                Consultant consultant = new Consultant();
+                consultant.AddClient(name = InputName.Text,
+                                        lastName = InputLastName.Text,
+                                           patronymic = InputPatronymic.Text,
+                                           numberPassport = InputPssportNumber.Text,
+                                           seriesPassport = InputPassportSeries.Text,
+                                           numberPhone = InputPhoneNumber.Text,
+                                           AddEditCombobox.SelectedIndex,
+                                           bankClient.Count + 1
+                                           );
+            }
+        }
+
         /// <summary>
         /// Добавление клиента через форму
         /// </summary>
@@ -39,6 +72,7 @@ namespace DZ_SkillBox_11.View
             if (MainWindow.CombWiw == 1)
             {
                 Manager manager = new Manager();
+                
                 manager.AddClient(InputName.Text,
                                            InputLastName.Text,
                                            InputPatronymic.Text,
